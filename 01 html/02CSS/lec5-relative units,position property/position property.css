@@ -1,0 +1,22 @@
+ul {
+    background-color:brown ;
+    position: relative;
+    list-style: none;
+}
+.html {
+   position: relative;
+   top: 10px;
+   left: 10px;
+  /* bottom: 100px;
+   right: 100px; */
+
+   inset: 20px;
+   position: unset;
+}
+.css {
+    background-color: aqua;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    position: unset;
+}
