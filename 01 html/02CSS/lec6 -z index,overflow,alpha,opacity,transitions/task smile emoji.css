@@ -1,0 +1,48 @@
+.face {
+    width: 350px;
+    height: 350px;
+    background-color: yellow; 
+    border-radius: 50%;        
+    position: relative;       
+}
+
+.eye {
+    width: 38px;
+    height: 38px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 25%;
+}
+
+.left-eye {
+    left: 22%;
+}
+
+.right-eye {
+    right: 22%;
+}
+
+.nose {
+    width: 24px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: brown;        
+    position: absolute;
+    top: 44%;
+    left: 46%; 
+}
+
+.mouth {
+    width: 188px;
+    height: 60px;
+    background-color: brown; 
+    
+    
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    
+    position: absolute;
+    bottom: 21%;
+    left: 22%; 
+}
