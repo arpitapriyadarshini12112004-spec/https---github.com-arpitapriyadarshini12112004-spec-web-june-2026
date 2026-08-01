@@ -1,4 +1,4 @@
-// // function fun(f1) {
+ // // function fun(f1) {
 // //   console.log("value of f1", f1)
 // // }
 
@@ -44,13 +44,31 @@
 // setTimeout(f1, 3000)
 // console.log(3)
 
-function f1() {
-  console.log("Hiiiiiii")
+//function f1() {
+  //console.log("Hiiiiiii")
+//}
+
+//const intervalId = setInterval(f1, 2000)
+//console.log("/////////////", intervalId)
+//const timerId = setTimeout(function () {
+  //console.log("Clearing interval")
+  //clearInterval(intervalId)
+  
+//}, 10000)
+
+
+function f2() {
+  console.log("Hello")
 }
 
-const intervalId = setInterval(f1, 2000)
+const intervalId = setInterval(f2, 2000)
 console.log("/////////////", intervalId)
-setTimeout(function () {
-  console.log("Clearing interval")
-  clearInterval(intervalId)
+ setTimeout(function () {
+  console.log("setting timeout")
+  clearTimeout(intervalId)
+  
 }, 10000)
+
+
+
+
