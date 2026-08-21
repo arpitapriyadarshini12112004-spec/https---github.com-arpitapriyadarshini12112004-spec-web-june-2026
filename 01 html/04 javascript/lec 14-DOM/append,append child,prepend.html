@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        .container{
+            border: 2px solid black;
+            padding: 20px;
+            min-width: 200px;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>append & <span>appendChild</span></h1>
+    <div class="container">
+     <div class="card"> Card div</div>
+</div>
+
+<script>
+    const container = document.querySelector(".container")
+    const card = document.querySelector(".card")
+    const h1 = document.querySelector("h1")
+
+
+    
+    // console.log(container);
+    // console.log(card);
+    // console.log(h1);
+    //container.append(h1)//append as a last child
+// container
+// //<div class=​"Container">​<div class=​"card">​ Card div​</div>​</div>​
+// h1
+// //<h1>​append and appendchild​</h1>​
+// container.append(h1)
+// //undefined
+// container.append("hiiii")
+// //undefined
+// container.append("hello", card)
+//undefined//hiihello card div
+
+//container.appendChild("hiiii")//as append child only add element not text so it give error
+
+// const h1Clone = h1.cloneNode()
+// //undefined
+// h1Clone
+// //<h1>​</h1>​
+// const h1Clone = h1.cloneNode("hii")
+// //undefined
+
+
+////child can not add more elements
+//<h1>​append and appendchild​</h1>
+// container.append(h1, h1Clone2)//append can add multiple elements​
+            
+//different bten append and appendchild
+            //>>>append add multiple arguments as child whereas appendchild add only first element as a child in multiple argument.
+            //>>>append add text but appendchild can not add text.
+
+// container.appendChild(h1)
+    // container.appendChild("Hiii")
+
+//     const h1Clone2 = h1.cloneNode(true)
+// h1Clone2.textContent = 'Hello World'
+// container.appendChild(h1, h1Clone2)
+
+
+
+
+    
+</script>
+    
+</body>
+</html>
