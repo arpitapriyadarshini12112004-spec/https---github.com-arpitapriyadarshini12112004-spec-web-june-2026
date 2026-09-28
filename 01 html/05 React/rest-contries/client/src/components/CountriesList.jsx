@@ -2,29 +2,33 @@
 import { useEffect, useState } from "react";
 import countriesData from "../countriesData";
 import CountryCard from "./CountryCard";
+import CountriesListShimmer from "./CountriesListShimmer";
 
 export default function CountriesList( {query}) {
   // let countriesData = []
-  const [countriesData, setCountriesData] = useState([])
+  const [countriesData, setCountriesData] = useState([])                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 
   //  const [query, setQuery] = useState("")
-  const filteredCountries = countriesData.filter(country => country.names.common. toLowerCase().includes(query.toLowerCase()))
+  const filteredCountries = countriesData.filter(country => 
+    country.names.common. toLowerCase().includes(query.toLowerCase()))
+    
 //  const handleChange = (e) => {
 //   setQuery(e.target.value)
 //  }
 useEffect(() => {
-fetch(
-  'https://api.restcountries.com/countries/v5?response_fields=names.common,capital,flag.url_svg,capitals,region,population&limit=100',
-  {
-     headers: { 
-      'Authorization': 'Bearer rc_live_86a83a0137fa4d5d9e2a42e3494cf491'
-     }
-     }
-)
+// fetch(
+//   'https://api.restcountries.com/countries/v5?response_fields=names.common,capital,flag.url_svg,capitals,region,population&limit=100',
+//   {
+//      headers: { 
+//       'Authorization': 'Bearer rc_live_86a83a0137fa4d5d9e2a42e3494cf491'
+//      }
+//      }
+// )
+fetch("http://localhost:3000/countries")
 .then((response) => response.json())
  .then((result) =>{
-   console.log("result is", result);
-  setCountriesData(result.data.objects)
+  //  console.log("result is", result);
+  setCountriesData(result)
  })
  }, [])
 
@@ -46,7 +50,7 @@ useEffect =>
 
 */
 
-console.log("CountriesList Component", countriesData);
+
 
 
  return (
@@ -55,6 +59,8 @@ console.log("CountriesList Component", countriesData);
     <div className="countries-container">
       {/* <button onClick={() => setCountriesData([])}> Click Here</button> */}
       {
+        !countriesData.length ?
+            <CountriesListShimmer /> :
         filteredCountries.length !=0 ?
         (filteredCountries.map((country, idx) => (
           <CountryCard 
@@ -66,7 +72,7 @@ console.log("CountriesList Component", countriesData);
             region={country.region}
           />)))
           :
-          <p>Unable to find Country with name :-{query}</p>
+          <h2>Unable to find Country with name :-{query}</h2>
       }
     </div>
     </>

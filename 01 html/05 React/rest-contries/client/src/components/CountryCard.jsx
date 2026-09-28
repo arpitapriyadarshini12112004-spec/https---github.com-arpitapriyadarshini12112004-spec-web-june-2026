@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 export default function CountryCard({
   name,
   flag,
@@ -7,7 +9,7 @@ export default function CountryCard({
 }) {
   
   return (
-    <a className="country-card" href="#">
+    <Link className="country-card" to={ `/${name}`}>
 
       <div className="flag-container">
         {/* TODO: Display the country flag */}
@@ -35,6 +37,6 @@ export default function CountryCard({
         </p>
 
       </div>
-    </a>
+    </Link>
   )
 }
